@@ -37,11 +37,21 @@
                             <a class="nav-link" href="/artists">Artists</a>
                             <a class="nav-link" href="/albums">Albums</a>
                             <a class="nav-link" href="/genres">Genres</a>
+                            
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/admin/songs">Songs</a>
+                                <a class="dropdown-item" href="/admin/artists">Artists</a>
+                                <a class="dropdown-item" href="/admin/albums">Albums</a>
+                                <a class="dropdown-item" href="/admin/genres">Genres</a>
+                            </div>
+                        </div>
                     </ul>
                 </div>
             </div>

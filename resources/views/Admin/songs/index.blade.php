@@ -23,9 +23,9 @@
                         @foreach($song as $song)
                         <tr>
                         <th scope="row">{{ $loop->index + 1}}</th>
-                        <td>{{ $song->title_song}}</td>
+                        <td>{{ $song->title_song }}</td>
                         <td>{{ $song->id_artist }}</td>
-                        <td>{{ $song->duration}} minutes</td>
+                        <td>{{ $song->duration }} minutes</td>
                         <td>{{ $song->id_genre }}</td>
                         <td>{{ $song->id_album }}</td>
                         <td>{{ $song->year }}</td>

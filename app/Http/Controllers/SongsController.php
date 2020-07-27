@@ -74,19 +74,54 @@ public function Edit($id){
         $artist = $collectionartist->find();
         $collectiongenre = (new MongoDB\Client)->Music->Genres;
         $genre = $collectiongenre->find();
-        return view('Admin.songs.index', [ "song" => $song, "album" => $album, "artist" => $artist, "genre" => $genre ]);
+        return view('Admin.songs.edit', [ "song" => $song, "album" => $album, "artist" => $artist, "genre" => $genre ]);
 
+    }
+    public function Update(){
+        $collection = (new MongoDB\Client)->Music->Songs;
+
+        $song = [
+
+            "title_song" => request("title_song"),
+
+            "id_artist" => request("artist"),
+
+            "duration" => request("duration"),
+
+            "id_genre" => request("genre"),
+
+            "id_album" => request("album"),
+
+            "year" => request("year")
+        ];
+        $updateOneResult = $collection->updateOne([
+            "_id" => new \MongoDB\BSON\ObjectId(request("songid"))
+        ], [
+            '$set' => $song
+        ]);
+        return redirect('/admin/songs/'.request("songid"));
     }
 
     
     public function Delete($id){
 
         $collection = (new MongoDB\Client)->Music->Songs;
-
         $song = $collection->findOne([ "_id" => new MongoDB\BSON\ObjectID($id) ]);
-  
+        $collectionalbum = (new MongoDB\Client)->Music->Albums;
+        $album = $collectionalbum->find();
+        $collectionartist = (new MongoDB\Client)->Music->Artists;
+        $artist = $collectionartist->find();
+        $collectiongenre = (new MongoDB\Client)->Music->Genres;
+        $genre = $collectiongenre->find();
 
-      return view('Admin.songs.delete', [ "song" => $song ]);
+      return view('Admin.songs.delete', [ "song" => $song, "album" => $album, "artist" => $artist, "genre" => $genre  ]);
     }
 
+    public function Remove() {
+        $collection = (new MongoDB\Client)->Music->Songs;
+        $deleteOneResult = $collection->deleteOne([
+            "_id" => new \MongoDB\BSON\ObjectId(request('songid'))
+        ]);
+        return redirect('/admin/songs');
+    }
 }

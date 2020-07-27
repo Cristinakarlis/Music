@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Create New Artist</h1>
+                <h1>Delete Artist</h1>
                 <form action="/admin/artists/delete" method="POST">
                 @csrf
                 @method('DELETE')
@@ -29,6 +29,7 @@
                         <label for="description">Description</label>
                         <input class="form-control" type="text" name="description" id="description" value="{{ $artist->description}}" disabled>
                     </div>
+                    <button type="submit" class="btn btn-default">Cancel</button>
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </div>

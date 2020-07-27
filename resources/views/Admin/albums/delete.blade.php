@@ -39,6 +39,7 @@
                         <label for="year">Year</label>
                         <input class="form-control" type="text" name="year" id="year" value="{{ $album->year }}" disabled>
                     </div>
+                    <button type="submit" class="btn btn-default">Cancel</button>
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </div>

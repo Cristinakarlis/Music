@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1>Edit Genre</h1>
+                <h1>Delete Genre</h1>
                 <form action="/admin/genres/delete" method="POST">
                 @csrf
                 @method('DELETE')
@@ -13,7 +13,7 @@
                         <label for="genre">Genre Name</label>
                         <input class="form-control" type="text" name="genre" id="genre" value="{{ $genre->genre}}" disabled>
                     </div>
-                    
+                    <button type="submit" class="btn btn-default">Cancel</button>
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </div>

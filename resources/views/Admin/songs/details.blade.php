@@ -13,7 +13,7 @@
                     </div>
                     <ul class="list-group list-group-flash">
                      <li class= "list-group-item"><b>Duration:</b> {{ $song->duration}}</li> 
-                     <li class= "list-group-item"><b>Genre:</b>  {{ $song->id_genre}}</li> 
+                     <li class= "list-group-item" ><b>Genre:</b>  {{ $song->id_genre}}</li> 
                      <li class= "list-group-item"><b>Album:</b>  {{ $song->id_album}}</li> 
                      <li class= "list-group-item"><b>Year:</b>  {{ $song->year}}</li> 
                     </ul>

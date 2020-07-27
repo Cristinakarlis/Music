@@ -9,6 +9,7 @@ class SongsController extends Controller {
     public function Index (){
         $collections= (new MongoDB\Client)->Music->Songs;
         $songs = $collections->find();
+        
         return view('Songs.index', ['songs' => $songs]);
 
     }
@@ -23,8 +24,7 @@ class SongsController extends Controller {
         $collection = (new MongoDB\Client)->Music->Songs;
 
         $song = $collection->findOne([ "_id" => new MongoDB\BSON\ObjectID($id) ]);
-
-        return view('Admin.songs.details', [ "song" => $song ]);
+        return view('Admin.songs.details', [ "song" => $song]);
 
     }
 
